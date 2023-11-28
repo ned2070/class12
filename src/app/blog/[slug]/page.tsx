@@ -17,3 +17,24 @@ export function generateStaticParams() {
     };
   });
 }
+
+export default function BlogPost({ params }: BlogPostParams) {
+  const post = getPostBySlug(params.slug);
+
+  console.log(post, "this is from the blog page");
+  if (!post) {
+    notFound();
+  }
+
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-between p-24">
+      <h1>{post.title}</h1>
+      <div
+        dangerouslySetInnerHTML={{ __html: post.body.html }}
+        className="prose dark:prose-invert"
+      ></div>
+      {/* @ts-ignore */}
+      <Comments postSlug={params.slug} />
+    </div>
+  );
+}
