@@ -5,5 +5,5 @@ export function getPosts() {
 }
 
 export function getPostBySlug(slug: string) {
-  return getPosts().find({ post } => post.slug == slug)
+  return getPosts().find((post) => post.slug == slug);
 }
