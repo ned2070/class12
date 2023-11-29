@@ -1,6 +1,8 @@
 import { WEB_SITE } from "./config";
 import { CommentForm } from "./CommentForm";
 
+console.log(WEB_SITE);
+
 export default async function Comments({ postSlug }: { postSlug: string }) {
   console.log("This runs on the server");
   let comments = [];
