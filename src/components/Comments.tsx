@@ -1,4 +1,4 @@
-import { WEB_SITE } from "./config";
+import { WEB_SITE } from "../../config";
 import { CommentForm } from "./CommentForm";
 
 console.log(WEB_SITE);
